@@ -13,6 +13,8 @@ spec:
     value: main
   - name: envPath
   - name: argocdApp
+  - name: argocdNamespace 
+    value: argo
 
   steps:
   - uses: git-clone
@@ -46,4 +48,5 @@ spec:
     config:
       apps:
       - name: ${{ vars.argocdApp }}
+        namespace: ${{ vars.argocdNamespace }}
 
